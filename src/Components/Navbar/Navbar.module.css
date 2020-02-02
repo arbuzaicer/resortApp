@@ -1,0 +1,67 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8em;
+    padding: 0;
+}
+.logoContainer {
+    flex-grow: 1;
+    margin-left: 2em;
+}
+.logo {
+    width: 7em;
+    height: 7em;
+    border-radius: 50%;
+}
+.navigation {
+    text-decoration: none;
+    margin: 0 5rem;
+    display: flex;
+    height: 100%;
+    flex-grow: 1;
+}
+.navigation-section {
+    display: flex;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    padding: 0 1em;
+    font-weight: 500;
+    font-size: 2rem;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    display: none;
+    justify-self: flex-end;
+}
+
+.navigation-show {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Hover's section*/
+.nan-link:hover {
+    border-bottom: 2px solid blueviolet;
+}
+
+/*Media queries*/
+
+@media(max-width: 780px) {
+    .navigation-section {
+        display: none;
+    }
+    .nav-btn {
+        display: flex;
+    }
+}

@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css'
+import Home from "./Components/Home";
+import Rooms from "./Components/Rooms";
+import {SingleRoom} from "./Components/SingleRoom";
+import Error from "./Components/Error";
+import {Route, Switch} from 'react-router-dom'
+import Navbar from "./Components/Navbar/Navbar";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <>  <Navbar/>
+
+            <Switch>
+                <Route exact path="/" component={Home}/>
+                <Route exact path="/rooms/" component={Rooms}/>
+                <Route exact path="/rooms/:slug" component={SingleRoom}/>
+                {/*Slug - это ключ/кастомный, можно назвать как хочешь.
+            Главное при прописывании роутов использовать именно его*/}
+                <Route component={Error}/>
+            </Switch>
+            {/*Switch юзается тут для того, что бы словить ошибки линков
+            Т.е. если ссылки не номер не существует, будет срабатывать свич
+            и рендерится компонента Error. Все, что не оборачивается внутри свича будет рендерится
+            всегда.*/}
+        </>
+    );
 }
 
 export default App;
