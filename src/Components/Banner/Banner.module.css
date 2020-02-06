@@ -1,0 +1,22 @@
+.banner {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 1rem;
+    text-align: center;
+    width: 40em;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: white;
+}
+.banner p {
+    color: white;
+}
+
+.banner div {
+    width: 10rem;
+    height: 5px;
+    background: rgba(165, 90, 21, 0.58);
+    margin: 1.7rem auto;
+}

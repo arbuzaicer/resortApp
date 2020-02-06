@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 8em;
+    width: 100vw;
     padding: 0;
 }
 .logoContainer {
@@ -16,8 +17,8 @@
 }
 .navigation {
     text-decoration: none;
-    margin: 0 5rem;
     display: flex;
+    align-items: center;
     height: 100%;
     flex-grow: 1;
 }
@@ -27,7 +28,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: black;
+    color: black !important;
     padding: 0 1em;
     font-weight: 500;
     font-size: 2rem;
@@ -36,32 +37,46 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    margin-bottom: 2em;
 }
 
 .nav-btn {
     background: none;
     border: none;
     display: none;
-    justify-self: flex-end;
+    position: absolute;
+    right: 1em;
+    color: saddlebrown !important;
+    top: 1em;
+    transform: scale(1.8);
+    z-index: 9999;
 }
 
 .navigation-show {
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    left: 0;
+    top: 8em;
+    width: 100vw;
+    background-color: gray;
+    transition: 1s;
+    text-align: center;
 }
 
-/*Hover's section*/
-.nan-link:hover {
-    border-bottom: 2px solid blueviolet;
-}
 
 /*Media queries*/
 
 @media(max-width: 780px) {
     .navigation-section {
-        display: none;
+        position: absolute;
+        display: block;
+        width: 100vw;
+        top: -100%;
+        left: 0;
+        transition: 3s;
+        text-align: center;
     }
     .nav-btn {
         display: flex;
     }
 }
+

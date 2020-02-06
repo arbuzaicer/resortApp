@@ -1,18 +1,17 @@
 import React from 'react';
-import style from './App.module.css'
-import Home from "./Components/Home";
-import Rooms from "./Components/Rooms";
-import {SingleRoom} from "./Components/SingleRoom";
-import Error from "./Components/Error";
+import styles from './App.css'
+import Home from "./Components/Home/Home";
+import Rooms from "./Components/Rooms/Rooms";
+import {SingleRoom} from "./Components/singleRoom/SingleRoom";
+import Error from "./Components/Error/Error";
 import {Route, Switch} from 'react-router-dom'
 import Navbar from "./Components/Navbar/Navbar";
-
 
 function App() {
 
     return (
-        <>  <Navbar/>
-
+        <>
+            <Navbar/>
             <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/rooms/" component={Rooms}/>
