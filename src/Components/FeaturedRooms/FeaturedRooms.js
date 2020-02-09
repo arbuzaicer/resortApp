@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {RoomContext} from "../../Context/Context";
 import Preloader from "../Preloader/Preloader";
+import SingleRoom from "../singleRoom/SingleRoom";
+import Title from "../Title/Title";
 
 
 class FeaturedRooms extends Component {
@@ -8,24 +10,18 @@ class FeaturedRooms extends Component {
     static contextType = RoomContext;
 
     render() {
-        const data = this.context;
-        console.log(data)
+        let {loading, featuredRooms:rooms} = this.context;
 
-        let featuredRooms = data.featuredRooms.map(item => {
-            const single = <div key={item.id} className={'featured-room'}>
-                <img src={item.images[0]} alt=""/>
-                <p>{item.price}</p>
-                <p>{item.name}</p>
-            </div>;
-
-            return single;
+        rooms = rooms.map(item => {
+            return <SingleRoom key = {item.id} room = {item}/>
         });
-
         return (
-            <div>
-                <h2>Featured Rooms</h2>
-                {data.loading === true ? <Preloader/> : featuredRooms}
-            </div>
+            <section className='featured-rooms'>
+                <Title title = 'featured rooms'/>
+                <div className="featured-items">
+                    {loading?<Preloader/>:rooms}
+                </div>
+            </section>
         );
     }
 }
