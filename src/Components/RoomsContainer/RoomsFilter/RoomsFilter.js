@@ -57,7 +57,7 @@ export default function RoomsFilter(props) {
                                className='form-control'
                                onChange={handleChange}
                                value={price}
-                               step={10}/>
+                              />
                     </div>
                     {/*end select price*/}
 
@@ -70,17 +70,31 @@ export default function RoomsFilter(props) {
                         </div>
                     </div>
                     {/*end select size*/}
+
                     {/*select breakfast*/}
                     <div className="form-group">
                         <label htmlFor="breakfast">Breakfast</label>
                         <input type="checkbox"
-                               name="Breakfast"
-                               id="Breakfast"
+                               name="breakfast"
+                               id="breakfast"
                                value={breakfast}
                                onChange={handleChange}
                                className="size-input"
                         />
                     </div>
+                    {/*end breakfast*/}
+                    {/*select pets*/}
+                    <div className="form-group">
+                        <label htmlFor="pets">Pets</label>
+                        <input type="checkbox"
+                               name="pets"
+                               id="pets"
+                               value={pets}
+                               onChange={handleChange}
+                               className="size-input"
+                        />
+                    </div>
+                    {/*end pets*/}
                 </div>
 
             </form>
